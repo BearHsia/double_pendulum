@@ -17,7 +17,9 @@ Lc2 = L2/2;
 Izz2 = 2;
 
 % finite time parameters
-lf1 = 1;
+lf1 = 0.1;
+theta_f = 0.1;
+gama_f = 0.1;
 
 simuout = sim('pendulum_noratiobias',T);
 %figure(1);
@@ -35,8 +37,13 @@ simuout = sim('pendulum_noratiobias',T);
 %legend('L1','L2');
 %figure(6);
 %plot(simuout.L_est_error);
-figure(7);
-plot(simuout.tow2_est_param);
-legend('Y1','Y2','Y3','Y4');
-figure(8);
-plot(simuout.tow2_est_error);
+% figure(7);
+% plot(simuout.tow2_est_param);
+% legend('Y1','Y2','Y3','Y4');
+% figure(8);
+% plot(simuout.tow2_est_error);
+figure(9);
+plot(simuout.Lf_est_param);
+legend('Lf1','Lf2');
+figure(10);
+plot(simuout.Lf_est_error);
